@@ -37,7 +37,10 @@ class ZoneHandler:
             print("Не удалось считать видео")
             return
 
-        cv2.namedWindow(self.window_name, cv2.WINDOW_NORMAL)
+        cv2.namedWindow(self.window_name)
+
+        # Подключение обработчика кликов - MOVED AFTER WINDOW CREATION
+        cv2.setMouseCallback(self.window_name, self.mouse_callback)
 
         # Центрируем окно (чтобы не открывалось где попало)
         try:
@@ -51,9 +54,6 @@ class ZoneHandler:
 
         fh, fw = frame.shape[:2]
         cv2.moveWindow(self.window_name, (sw - fw) // 2, (sh - fh) // 2)
-
-        # Подключение обработчика кликов
-        cv2.setMouseCallback(self.window_name, self.mouse_callback)
 
         print("Надо кликать ЛКМ, чтобы добавить точки зоны.")
         print("'s' чтобы сохранить, 'q' чтобы выйти без сохранения.")
