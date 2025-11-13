@@ -109,7 +109,7 @@ class VideoProcessor:
         while True:
             ret, frame = cap.read()
             if not ret or frame is None:
-                print("⚠️ End of video or failed frame read")
+                print("end file")
                 break
 
             processed_frame, detections = self.process_frame(frame)
