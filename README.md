@@ -27,6 +27,7 @@
 git clone git@github.com:mrqwer/suspicion-detector.git
 cd suspicion-detector
 
+```
 Установите зависимости
 ```bash
 pip install -r requirements
