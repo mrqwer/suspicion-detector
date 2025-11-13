@@ -3,3 +3,5 @@ __pycache__
 draft.py
 test.mp4
 yolov8n.pt
+restricted_zones.json
+*.mp4
